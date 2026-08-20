@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}首页 · fire9 的技术博客{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>你好，我是 fire9 👋</h1>
+    <p>这里记录 Rust、系统设计和日常工程实践。所有文章均以 Markdown 存储在仓库中。</p>
+  </section>
+
+  <section class="post-list">
+    {% for post in posts %}
+      <article>
+        <h2><a href="/posts/{{ post.slug }}">{{ post.title }}</a></h2>
+        <p class="meta">{{ post.date }}</p>
+        <p>{{ post.summary }}</p>
+      </article>
+    {% endfor %}
+  </section>
+{% endblock %}

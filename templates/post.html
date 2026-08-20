@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} · fire9 的技术博客{% endblock %}
+
+{% block content %}
+  <article class="post-content">
+    <h1>{{ post.title }}</h1>
+    <p class="meta">{{ post.date }} · {{ post.summary }}</p>
+    {{ post.html|safe }}
+  </article>
+{% endblock %}
