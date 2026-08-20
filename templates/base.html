@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}fire9 的技术博客{% endblock %}</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f3f5ff;
+        --card: #ffffff;
+        --text: #1e2542;
+        --subtle: #56607a;
+        --brand: #4f46e5;
+        --brand-soft: #eef0ff;
+        --border: #dfe3f4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+        background: radial-gradient(circle at 10% -20%, #d8ddff 0, transparent 35%),
+          radial-gradient(circle at 90% 0%, #c6f2ff 0, transparent 35%), var(--bg);
+        color: var(--text);
+        line-height: 1.75;
+      }
+
+      .container {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 2.5rem 1.2rem 4rem;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.2rem;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        font-size: 1.2rem;
+      }
+
+      .brand span {
+        color: var(--brand);
+      }
+
+      .nav a {
+        margin-left: 0.8rem;
+        font-size: 0.95rem;
+      }
+
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .hero {
+        background: linear-gradient(140deg, #f5f6ff 0%, #ffffff 65%);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 1.25rem 1.3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero p {
+        margin: 0.4rem 0 0;
+        color: var(--subtle);
+      }
+
+      .post-list article {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.1rem 1.2rem;
+        margin: 1rem 0;
+        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.06);
+      }
+
+      .meta {
+        color: var(--subtle);
+        font-size: 0.92rem;
+        margin-top: -0.2rem;
+      }
+
+      .post-content {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.4rem;
+        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.06);
+      }
+
+      .post-content h1,
+      .post-content h2,
+      .post-content h3 {
+        line-height: 1.35;
+      }
+
+      .post-content code {
+        background: #eef2ff;
+        border-radius: 6px;
+        padding: 0.12rem 0.32rem;
+      }
+
+      .post-content pre {
+        background: #1f2544;
+        color: #f5f7ff;
+        overflow-x: auto;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .post-content pre code {
+        background: transparent;
+        color: inherit;
+        padding: 0;
+      }
+
+      footer {
+        margin-top: 2rem;
+        color: var(--subtle);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <div class="brand"><span>fire9</span> · Tech Blog</div>
+        <nav class="nav">
+          <a href="/">首页</a>
+          <a href="/rss.xml">RSS</a>
+        </nav>
+      </header>
+      {% block content %}{% endblock %}
+      <footer>Powered by Rust + Axum · Markdown first</footer>
+    </main>
+  </body>
+</html>
