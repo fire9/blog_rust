@@ -1,0 +1,11 @@
+{
+  "name": "blog_rust",
+  "install": "cargo build",
+  "terminals": [
+    {
+      "name": "web",
+      "command": "cargo run"
+    }
+  ],
+  "ports": [3000]
+}
